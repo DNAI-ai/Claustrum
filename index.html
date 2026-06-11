@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAUSTRUM — SISTEMA DE ARCHIVOS SECTOR 03</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- ── STATUS BAR ── -->
+<div class="status-bar">
+  <div>
+    <span class="blink">● SISTEMA ACTIVO</span>
+    &nbsp;&nbsp;
+    <span>MINISTERIO DE GESTIÓN INTERIOR — SECTOR 03 — ACCESO RESTRINGIDO</span>
+  </div>
+  <div style="display:flex;gap:20px;align-items:center;">
+    <span class="clock" id="sysClock">----.--.-- --:--:-- UTC</span>
+    <span>NODO: 07-ALPHA</span>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <!-- System info row -->
+  <div class="header-sysrow">
+    <span>SIS/ARCH/S03 — v1.0.0 — BASE DE DATOS GUBERNAMENTAL — USO INTERNO</span>
+    <span class="sys-id">REF: DN-SIS-001 // CLASIFICACIÓN: RESERVADO</span>
+  </div>
+  <!-- Nav row -->
+  <div class="header-nav">
+    <div class="nav-logo-block">
+      <div>
+        <div class="logo-code">CLAUSTRUM</div>
+        <div class="logo-sub">SISTEMA DE ARCHIVOS<br>SECTOR 03</div>
+      </div>
+    </div>
+
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="search">
+        <span class="tab-num">01.</span>BASE DE DATOS
+      </button>
+      <button class="nav-tab" data-tab="bunker">
+        <span class="tab-num">02.</span>INFRAESTRUCTURA
+      </button>
+      <button class="nav-tab" data-tab="archive">
+        <span class="tab-num">03.</span>ARCHIVOS CLASIFICADOS
+      </button>
+    </nav>
+
+    <div class="nav-right">
+      <span class="nav-classif">CLASIFICACIÓN: RESERVADO</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================================
+     TAB 1 — BASE DE DATOS / BUSCADOR
+     ================================================================ -->
+<div class="page active" id="page-search">
+  <div class="search-page">
+
+    <!-- Logo -->
+    <div class="search-logo">
+      <div class="big-title">SECTOR 03</div>
+      <div class="big-sub">MINISTERIO DE GESTIÓN INTERIOR — SISTEMA DE RECUPERACIÓN DE ARCHIVOS</div>
+      <div class="big-classif">⚠ ACCESO RESTRINGIDO — SOLO PERSONAL AUTORIZADO ⚠</div>
+    </div>
+
+    <!-- Search form -->
+    <div class="search-form-wrap">
+      <div class="search-field-label">
+        <span>CONSULTA DE ARCHIVO</span>
+        <span>USE TÉRMINOS EN MAYÚSCULAS PARA MAYOR PRECISIÓN</span>
+      </div>
+      <div class="search-bar">
+        <span class="sb-prompt">BUSCAR_</span>
+        <input type="text" id="searchInput" placeholder="Harlan, Sector 03, sujeto, incidente..." autocomplete="off" spellcheck="false">
+        <button class="search-btn" id="searchBtn">EJECUTAR</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="search-filters">
+        <span class="sf-label">CATEGORÍA</span>
+        <select class="sf-select" id="filterCat">
+          <option value="ALL">TODAS</option>
+          <option value="SUJETOS">SUJETOS</option>
+          <option value="INFRAESTRUCTURA">INFRAESTRUCTURA</option>
+          <option value="INCIDENTES">INCIDENTES</option>
+          <option value="OBJETOS">OBJETOS</option>
+          <option value="PROTOCOLOS">PROTOCOLOS</option>
+        </select>
+        <span class="sf-label">NIVEL</span>
+        <select class="sf-select" id="filterLevel">
+          <option value="ALL">TODOS</option>
+          <option value="C">NIVEL C</option>
+          <option value="B">NIVEL B</option>
+          <option value="A">NIVEL A</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="search-results" id="searchResults"></div>
+
+    <!-- Idle state — quick access cards -->
+    <div class="search-idle" id="searchIdle">
+      <div class="idle-card" data-query="Harlan">
+        <div class="ic-cat">SUJETOS</div>
+        <div class="ic-title">Harlan</div>
+        <div class="ic-count">1 registro</div>
+      </div>
+      <div class="idle-card" data-query="incidente 1987">
+        <div class="ic-cat">INCIDENTES</div>
+        <div class="ic-title">Incidente 1987</div>
+        <div class="ic-count">2 registros</div>
+      </div>
+      <div class="idle-card" data-query="linterna">
+        <div class="ic-cat">OBJETOS</div>
+        <div class="ic-title">Linterna SEC-7</div>
+        <div class="ic-count">2 registros</div>
+      </div>
+      <div class="idle-card" data-query="protocolo">
+        <div class="ic-cat">PROTOCOLOS</div>
+        <div class="ic-title">Protocolos</div>
+        <div class="ic-count">2 registros</div>
+      </div>
+      <div class="idle-card" data-query="sujeto anterior">
+        <div class="ic-cat">SUJETOS</div>
+        <div class="ic-title">Sujeto Anterior</div>
+        <div class="ic-count">2 registros</div>
+      </div>
+      <div class="idle-card" data-query="anomalía">
+        <div class="ic-cat">INFRAESTRUCTURA</div>
+        <div class="ic-title">Anomalías</div>
+        <div class="ic-count">3 registros</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     TAB 2 — INFRAESTRUCTURA / MAPA DEL BÚNKER
+     ================================================================ -->
+<div class="page" id="page-bunker">
+  <div class="bunker-page">
+
+    <div class="page-header">
+      <div class="ph-ref">DN-BNK-001 //</div>
+      <h2>Infraestructura — Sector 03</h2>
+      <span class="ph-stamp">PLANOS: CLASIFICADOS</span>
+    </div>
+
+    <!-- Data strips -->
+    <div class="bunker-data-strips">
+      <div class="data-strip">
+        <div class="ds-label">Estado de instalación</div>
+        <div class="ds-value">ACTIVO</div>
+        <div class="ds-sub">Protocolo en curso</div>
+      </div>
+      <div class="data-strip">
+        <div class="ds-label">Sujetos en instalación</div>
+        <div class="ds-value warn">02</div>
+        <div class="ds-sub">Harlan + Sujeto activo</div>
+      </div>
+      <div class="data-strip">
+        <div class="ds-label">Anomalías registradas</div>
+        <div class="ds-value alert">07</div>
+        <div class="ds-sub">Días 1–5. Ver informe.</div>
+      </div>
+      <div class="data-strip">
+        <div class="ds-label">Días de protocolo</div>
+        <div class="ds-value">06</div>
+        <div class="ds-sub">Finalización: Día 6</div>
+      </div>
+    </div>
+
+    <!-- Map + info layout -->
+    <div class="bunker-layout">
+
+      <!-- MAP PANEL -->
+      <div class="bunker-map-panel">
+        <div class="map-header">
+          <span>PLANTA — SECTOR 03 // ESCALA APROXIMADA</span>
+          <span>⚠ PLANOS SIMPLIFICADOS — VER VERSIÓN COMPLETA EN ARCHIVO</span>
+        </div>
+
+        <!-- SVG map with clickable rooms -->
+        <div class="bunker-map-svg" style="position:relative; min-height:480px;">
+
+          <!-- Room hotspots — positions match a rough bunker layout -->
+          <!-- Top row -->
+          <div class="map-room" data-room="control"
+               style="left:2%;top:4%;width:28%;height:18%;">
+            <span class="room-id">CT-01</span>
+            <span class="room-label">SALA DE CONTROL<br><span style="color:var(--red-hi);font-size:0.45rem;">⚠ RESTRINGIDO</span></span>
+          </div>
+          <div class="map-room" data-room="cuarto_maquinas"
+               style="left:32%;top:4%;width:24%;height:18%;">
+            <span class="room-id">M-01</span>
+            <span class="room-label">CUARTO DE<br>MÁQUINAS</span>
+          </div>
+          <div class="map-room" data-room="almacen"
+               style="left:58%;top:4%;width:40%;height:18%;">
+            <span class="room-id">AL-01</span>
+            <span class="room-label">ALMACÉN A<br><span style="color:var(--amber);font-size:0.45rem;">⚠ ANOMALÍA</span></span>
+          </div>
+
+          <!-- Corridor indicator -->
+          <div style="position:absolute;left:0;top:24%;width:100%;height:6%;
+               border-top:1px solid rgba(74,158,92,0.15);
+               border-bottom:1px solid rgba(74,158,92,0.15);
+               background:rgba(74,158,92,0.02);
+               display:flex;align-items:center;padding:0 12px;">
+            <span style="font-size:0.45rem;color:var(--text-muted);letter-spacing:0.16em;">
+              PN-01 // PASILLO NORTE
+            </span>
+          </div>
+
+          <!-- Middle row -->
+          <div class="map-room" data-room="sala_principal"
+               style="left:2%;top:33%;width:44%;height:28%;">
+            <span class="room-id">P-01</span>
+            <span class="room-label">SALA PRINCIPAL<br><span style="color:var(--green-hi);font-size:0.45rem;">● PROTOCOLO ACTIVO</span></span>
+          </div>
+          <div class="map-room" data-room="dormitorio"
+               style="left:48%;top:33%;width:50%;height:28%;">
+            <span class="room-id">D-01</span>
+            <span class="room-label">DORMITORIO<br><span style="color:var(--amber);font-size:0.45rem;">⚠ ANOMALÍA</span></span>
+          </div>
+
+          <!-- Corridor indicator -->
+          <div style="position:absolute;left:0;top:63%;width:100%;height:5%;
+               border-top:1px solid rgba(74,158,92,0.12);
+               border-bottom:1px solid rgba(74,158,92,0.12);
+               background:rgba(74,158,92,0.015);
+               display:flex;align-items:center;padding:0 12px;">
+            <span style="font-size:0.45rem;color:var(--text-muted);letter-spacing:0.16em;">
+              PS-01 // PASILLO SUR
+            </span>
+          </div>
+
+          <!-- Bottom row -->
+          <div class="map-room" data-room="cocina"
+               style="left:2%;top:70%;width:36%;height:26%;">
+            <span class="room-id">C-01</span>
+            <span class="room-label">COCINA<br><span style="color:var(--green-hi);font-size:0.45rem;">● ACTIVO</span></span>
+          </div>
+          <div class="map-room" data-room="bano"
+               style="left:40%;top:70%;width:26%;height:26%;">
+            <span class="room-id">B-01</span>
+            <span class="room-label">BAÑO<br><span style="color:var(--amber);font-size:0.45rem;">⚠ DÍA 5</span></span>
+          </div>
+          <div style="position:absolute;left:68%;top:70%;width:30%;height:26%;
+               border:1px dashed rgba(74,158,92,0.12);
+               display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:0.45rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;text-align:center;">
+              [ÁREA REDACTADA]<br>NIVEL A
+            </span>
+          </div>
+
+          <!-- Legend -->
+          <div style="position:absolute;bottom:6px;right:8px;font-size:0.45rem;
+               color:var(--text-muted);letter-spacing:0.1em;text-align:right;line-height:1.8;">
+            ● ACTIVO &nbsp; ⚠ ANOMALÍA<br>
+            HAGA CLIC EN UNA SALA PARA MÁS INFORMACIÓN
+          </div>
+
+        </div>
+      </div>
+
+      <!-- INFO PANEL -->
+      <div class="bunker-info-panel">
+        <div class="info-panel-header">DETALLE DE SALA — SELECCIONE EN EL MAPA</div>
+        <div class="room-detail empty" id="roomDetail">
+          <div>NINGUNA SALA SELECCIONADA<br><br>
+          Haga clic en una sala<br>del mapa para ver<br>su información detallada.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer note -->
+    <div style="font-size:0.58rem;letter-spacing:0.14em;color:var(--text-muted);
+         text-transform:uppercase;border-top:1px solid var(--border);padding-top:14px;">
+      NOTA: Este mapa es una representación simplificada. Las dimensiones reales del Sector 03 
+      no han sido divulgadas. Discrepancias espaciales documentadas en Almacén A — ver DN-DOC-002.
+    </div>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     TAB 3 — ARCHIVOS CLASIFICADOS
+     ================================================================ -->
+<div class="page" id="page-archive">
+  <div class="archive-page">
+
+    <!-- GATE (shown when not authenticated) -->
+    <div class="archive-gate" id="archiveGate">
+      <div class="gate-terminal">
+        <div class="gate-stamp">CLASIFICADO</div>
+        <div class="gate-title">
+          MINISTERIO DE GESTIÓN INTERIOR<br>
+          ARCHIVOS RESERVADOS — SECTOR 03<br>
+          SOLO PERSONAL AUTORIZADO<br>
+          EL ACCESO NO AUTORIZADO ES UN DELITO GRAVE
+        </div>
+        <div class="gate-form">
+          <span class="gate-prompt">C:\&gt;</span>
+          <input class="gate-input" id="gateInput" type="text" placeholder="CÓDIGO DE AUTORIZACIÓN" maxlength="20" autocomplete="off" spellcheck="false">
+          <button class="gate-btn" id="gateBtn">AUTENTICAR</button>
+        </div>
+        <div class="gate-status" id="gateStatus">INTRODUCE TU CÓDIGO DE AUTORIZACIÓN</div>
+        <div class="gate-hint">
+          PISTA: Los códigos de acceso se distribuyen<br>a través de distintos canales del proyecto.<br>
+          <em class="hint-code">Busca en el podcast, el diario de desarrollo,<br>el juego o los documentos físicos.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARCHIVE CONTENT (shown after authentication) -->
+    <div class="archive-content" id="archiveContent">
+
+      <div class="page-header">
+        <div class="ph-ref">DN-ARCH //</div>
+        <h2>Archivos Clasificados</h2>
+        <span class="ph-stamp" id="archiveAccessLabel">SESIÓN ACTIVA</span>
+      </div>
+
+      <!-- Access level info -->
+      <div class="archive-level-header">
+        <span>DOCUMENTOS DISPONIBLES SEGÚN TU NIVEL DE ACCESO</span>
+        <span>LOS DOCUMENTOS DE NIVEL SUPERIOR REQUIEREN CÓDIGO DE MAYOR AUTORIZACIÓN</span>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="doc-categories">
+        <button class="doc-cat-btn active" data-cat="TODOS">TODOS</button>
+        <button class="doc-cat-btn" data-cat="TESTIMONIOS">TESTIMONIOS</button>
+        <button class="doc-cat-btn" data-cat="INCIDENTES">INCIDENTES</button>
+        <button class="doc-cat-btn" data-cat="PROTOCOLOS">PROTOCOLOS</button>
+        <button class="doc-cat-btn" data-cat="CONTRATOS">CONTRATOS</button>
+        <button class="doc-cat-btn" data-cat="OBJETOS">OBJETOS</button>
+        <button class="doc-cat-btn" data-cat="INFRAESTRUCTURA">INFRAESTRUCTURA</button>
+        <button class="doc-cat-btn" data-cat="VIGILANCIA">VIGILANCIA</button>
+      </div>
+
+      <!-- Document grid -->
+      <div class="doc-grid" id="docGrid">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- Level guide -->
+      <div style="border:1px solid var(--border);background:var(--panel);padding:16px 20px;
+           display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);">
+        <div style="background:var(--panel);padding:14px 16px;">
+          <div style="font-size:0.55rem;letter-spacing:0.2em;color:var(--text-muted);margin-bottom:6px;">NIVEL C — ACCESO BÁSICO</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);line-height:1.6;">Disponible con códigos distribuidos en el podcast y el devlog de Instagram.</div>
+        </div>
+        <div style="background:var(--panel);padding:14px 16px;">
+          <div style="font-size:0.55rem;letter-spacing:0.2em;color:var(--amber);margin-bottom:6px;">NIVEL B — ACCESO EXTENDIDO</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);line-height:1.6;">Disponible con códigos encontrados en la web ARG y el diario físico del juego.</div>
+        </div>
+        <div style="background:var(--panel);padding:14px 16px;">
+          <div style="font-size:0.55rem;letter-spacing:0.2em;color:var(--red-hi);margin-bottom:6px;">NIVEL A — ACCESO TOTAL</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);line-height:1.6;">Distribuido exclusivamente dentro del juego y en piezas de edición muy limitada.</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     DOCUMENT VIEWER MODAL
+     ================================================================ -->
+<div class="doc-viewer" id="docViewer">
+  <div class="doc-viewer-inner">
+    <div class="dv-header">
+      <span class="dv-header-info" id="dvHeaderInfo">DOCUMENTO</span>
+      <button class="dv-close" onclick="closeDoc()">✕ CERRAR</button>
+    </div>
+    <div class="dv-body" id="dvBody"></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="sf-left">
+    MINISTERIO DE GESTIÓN INTERIOR — SECTOR 03 — SIS/ARCH/S03 v1.0.0<br>
+    CLAUSTRUM // SISTEMA DE ARCHIVOS GUBERNAMENTALES
+  </div>
+  <div>
+    <span class="sf-classif">CLASIFICACIÓN: RESERVADO</span>
+  </div>
+</footer>
+
+</body>
+</html>
