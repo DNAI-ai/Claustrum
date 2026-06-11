@@ -923,6 +923,131 @@ body::before {
   display: flex; justify-content: space-between;
 }
 
+/* Gate compact mode — stays visible as mini bar after first unlock */
+.gate-wrap.gate-compact {
+  min-height: auto;
+  margin-bottom: 24px;
+}
+.gate-wrap.gate-compact .gate-box {
+  padding: 20px 28px;
+}
+.gate-wrap.gate-compact .gate-stamp,
+.gate-wrap.gate-compact .gate-title,
+.gate-wrap.gate-compact .gate-hint {
+  display: none;
+}
+.gate-wrap.gate-compact::before {
+  content: 'ENTER ADDITIONAL CODE TO UPGRADE ACCESS LEVEL';
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Infrastructure code field */
+.infra-code-bar {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.infra-code-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding-right: 16px;
+  border-right: 1px solid var(--border);
+  margin-right: 14px;
+  white-space: nowrap;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.infra-bar {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border-hi);
+  background: var(--bg);
+  flex: 1;
+  max-width: 400px;
+}
+.infra-prompt {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  user-select: none;
+}
+.infra-input {
+  flex: 1;
+  background: transparent;
+  border: none; outline: none;
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  caret-color: var(--red);
+}
+.infra-input::placeholder { color: var(--text-muted); opacity: 1; }
+.infra-btn {
+  background: var(--bg3);
+  border: none; border-left: 1px solid var(--border-hi);
+  color: var(--text-dim);
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  padding: 0 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.12s;
+}
+.infra-btn:hover { background: var(--red-dim); color: var(--red); }
+.infra-status {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  padding-left: 16px;
+  text-transform: uppercase;
+}
+.infra-status.ok { color: var(--amber); }
+.infra-status.err { color: var(--red); }
+
+/* Video doc card */
+.video-doc-card {
+  background: var(--bg2);
+  border: 1px solid var(--border-hi);
+  border-left: 2px solid var(--amber);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.12s;
+  margin-bottom: 1px;
+}
+.video-doc-card:hover { background: var(--bg3); }
+.video-doc-card .vdc-tag {
+  font-size: 0.54rem; letter-spacing: 0.2em;
+  color: var(--amber); text-transform: uppercase;
+}
+.video-doc-card .vdc-title {
+  font-family: var(--font-title);
+  font-size: 1.15rem; color: var(--white); letter-spacing: 0.04em;
+}
+.video-doc-card .vdc-desc { font-size: 0.74rem; color: var(--text-dim); line-height: 1.6; }
+.video-doc-card .vdc-meta {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;
+}
+
 /* ── FOOTER ── */
 .site-footer {
   border-top: 1px solid var(--border);

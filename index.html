@@ -190,6 +190,17 @@
       </div>
     </div>
 
+    <!-- Infrastructure deep access code -->
+    <div class="infra-code-bar">
+      <div class="infra-code-label">INFRASTRUCTURE<br>DEEP ACCESS</div>
+      <div class="infra-bar">
+        <span class="infra-prompt">C:\&gt;</span>
+        <input type="text" id="infraCodeInput" class="infra-input" placeholder="INFRA CODE..." maxlength="20" autocomplete="off" spellcheck="false">
+        <button class="infra-btn" id="infraCodeBtn">UNLOCK</button>
+      </div>
+      <div class="infra-status" id="infraCodeStatus">ENTER INFRASTRUCTURE CODE</div>
+    </div>
+
     <!-- Map + info -->
     <div class="map-layout">
 
@@ -353,6 +364,18 @@
         <button class="doc-cat" data-cat="OBJECTS">OBJECTS</button>
         <button class="doc-cat" data-cat="INFRASTRUCTURE">INFRASTRUCTURE</button>
         <button class="doc-cat" data-cat="SURVEILLANCE">SURVEILLANCE</button>
+      </div>
+
+      <!-- Video document — unlocked by any Level C+ code -->
+      <div class="video-doc-card" id="videoDocCard" onclick="openVideoDoc()" style="display:none;">
+        <div class="vdc-tag">DN-VID-001 // MEDIA // LEVEL C — PODCAST CHANNEL</div>
+        <div class="vdc-title">Sector 03 — Classified Audio-Visual Document</div>
+        <div class="vdc-desc">Incident reconstruction audio-visual record. Distributed through the podcast channel. Access granted with podcast code.</div>
+        <div class="vdc-meta">
+          <span class="dc-badge lv-c">LEVEL C</span>
+          <span class="dc-date">DATE: [CLASSIFIED]</span>
+          <span class="dc-pages">VIDEO DOCUMENT</span>
+        </div>
       </div>
 
       <!-- Document grid -->
