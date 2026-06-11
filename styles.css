@@ -923,6 +923,81 @@ body::before {
   display: flex; justify-content: space-between;
 }
 
+/* Additional code bar inside archive content */
+.add-code-bar {
+  border: 1px solid var(--border-hi);
+  background: var(--bg2);
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.add-code-label {
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-right: 1px solid var(--border);
+  padding-right: 14px;
+}
+.add-code-form {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border-hi);
+  background: var(--bg);
+  flex: 1;
+  max-width: 420px;
+}
+.add-code-prompt {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  user-select: none;
+}
+.add-code-input {
+  flex: 1;
+  background: transparent;
+  border: none; outline: none;
+  color: var(--white);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  caret-color: var(--red);
+  min-width: 0;
+}
+.add-code-input::placeholder { color: var(--text-muted); opacity: 1; }
+.add-code-btn {
+  background: var(--bg3);
+  border: none; border-left: 1px solid var(--border-hi);
+  color: var(--text-dim);
+  font-family: var(--font-main);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  padding: 0 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.add-code-btn:hover { background: var(--red-dim); color: var(--red); }
+.add-code-status {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 200px;
+}
+.add-code-status.ok  { color: var(--amber); }
+.add-code-status.err { color: var(--red); }
+
 /* Gate compact mode — stays visible as mini bar after first unlock */
 .gate-wrap.gate-compact {
   min-height: auto;

@@ -315,64 +315,192 @@ function revealVideoDoc(){
 // DOCUMENTS
 // ================================================================
 const DOCS = [
-  {ref:'DN-DOC-001',level:'C',cat:'TESTIMONIES',title:'Initial Subject Declaration',desc:'Arrival interview transcript. Subject memory of the collapse and rescue. Three inconsistencies documented.',date:'2026-03-[CLASSIFIED]',pages:4,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03',title:'INITIAL SUBJECT DECLARATION',subtitle:'Arrival interview transcript — Confidential',classif:'RESERVED',ref:'DN-DOC-001 // LEVEL C',date:'[DATE CLASSIFIED]',
-      sections:[
-        {title:'1. SUBJECT IDENTIFICATION',body:`Subject identified as <span class="redact">████████████</span>. Estimated age: <span class="redact">██</span>. No documentation on arrival. Partial amnesia declared for pre-collapse events. Physical condition: stable.`},
-        {title:'2. DECLARATION — THE COLLAPSE',body:`"I don't remember how I got here. I remember the noise, then nothing. Harlan found me. He says he has been searching the outside for days looking for survivors."<br><br>Declaration consistency assessment: <span class="redact">████████████████████████</span>. Inconsistencies detected: 3. See Appendix A.`},
-        {title:'3. EVALUATOR NOTES',body:`Subject shows temporal confusion consistent with intake protocol. Has not asked about the outside in the first <span class="redact">██</span> minutes. Trust-stimulus response: POSITIVE. Harlan Protocol activated with expected result.`},
-      ],sig:{l:'EVALUATOR: HARLAN [PROTOCOL ACTIVE]',r:'CLASSIFICATION: RESERVED // LEVEL C'}}},
-  {ref:'DN-DOC-002',level:'C',cat:'INFRASTRUCTURE',title:'Operative Manual — Sector 03',desc:'General facility description, usage norms and emergency protocol.',date:'1994-11-03',pages:12,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — FACILITIES DIRECTORATE',title:'OPERATIVE MANUAL — SECTOR 03',subtitle:'Internal use — Revision 4.2',classif:'RESERVED',ref:'DN-DOC-002 // LEVEL C',date:'1994-11-03',
-      sections:[
-        {title:'1. FACILITY DESCRIPTION',body:`Sector 03 is a Class B underground facility designed to house up to <span class="redact">██</span> persons for a maximum period of <span class="redact">███</span> days. Equipped with autonomous generator, filtered ventilation, basic supplies, and shortwave communication.`},
-        {title:'2. EMERGENCY PROTOCOL',body:`In the event of main generator failure, backup system activates in <span class="redact">██</span> seconds. Security cameras have independent battery for <span class="redact">██</span> hours. Evacuation protocol: Appendix <span class="redact">█</span>.`},
-        {title:'3. USE RESTRICTIONS',body:`Access to Storage A restricted to Level B or higher. Machine Room requires supervision. Control Room exclusive to duty coordinator.`},
-      ],sig:{l:'FACILITIES DIRECTORATE — 1994',r:'SECTOR 03 // OPERATIVE MANUAL'}}},
-  {ref:'DN-DOC-003',level:'B',cat:'INCIDENTS',title:'Incident 1987 — Executive Summary',desc:'Summary of the 1987 resilience protocol. 12 subjects. 3 survivors.',date:'1987-09-14',pages:8,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — RESEARCH DEPARTMENT',title:'SECTOR 03 INCIDENT — 1987',subtitle:'Executive Summary — Restricted Use',classif:'RESTRICTED',ref:'DN-DOC-003 // LEVEL B',date:'1987-09-14',
-      sections:[
-        {title:'1. PROTOCOL DESCRIPTION',body:`Extreme resilience test protocol. 12 volunteer subjects. Planned confinement: <span class="redact">██</span> days. Stated objective: evaluate adaptation under prolonged isolation. Actual objective: <span class="redact">████████████████████████████████████</span>.`},
-        {title:'2. OUTCOME',body:`At protocol end, 9 of 12 subjects presented <span class="redact">█████████████████████</span>. Three survivors evacuated. Condition at evacuation: <span class="redact">████████████████</span>. Official cause: severe psychological stress. Actual cause: <span class="redact">████████████████████████████</span>.`},
-        {title:'3. MEASURES ADOPTED',body:`Full report classified — Level A access only. Three survivors signed non-disclosure agreement DN-DOC-007. None has made public statement since <span class="redact">████████</span>.`},
-      ],sig:{l:'LEAD INVESTIGATOR: <span class="redact">████████████</span>',r:'CLASSIFICATION: RESTRICTED // LEVEL B'}}},
-  {ref:'DN-DOC-004',level:'B',cat:'OBJECTS',title:'Object File — Flashlight SEC-7',desc:'Unidentified initials engraved on base. Linked to note DN-OBJ-002 and mirror inscription Day 5.',date:'[DATE UNKNOWN]',pages:2,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03 INVENTORY',title:'OBJECT FILE — FLASHLIGHT SEC-7',subtitle:'Unconfirmed owner',classif:'RESTRICTED',ref:'DN-DOC-004 // LEVEL B',date:'[DATE UNKNOWN]',
-      sections:[
-        {title:'1. DESCRIPTION',body:`Standard issue flashlight. Condition: functional. Significant wear consistent with prolonged use. Initials hand-engraved on base: <span class="redact">███</span>. Engraving tool: unidentified sharp object.`},
-        {title:'2. PROVENANCE',body:`Not in current subject intake inventory. Not in 1987 protocol inventory. Possible provenance: <span class="redact">████████████████████████</span>. Investigation: ongoing.`},
-        {title:'3. CONNECTIONS',body:`Initials match signature on note DN-OBJ-002. Also match initials in bathroom mirror condensation (Day 5). Working hypothesis: <span class="redact">████████████████████████████████████████</span>.`},
-      ],sig:{l:'INVENTORY: <span class="redact">██████</span>',r:'OBJECT — OWNER UNCONFIRMED'}}},
-  {ref:'DN-DOC-007',level:'B',cat:'CONTRACTS',title:'Non-Disclosure Agreement — 1987 Survivors',desc:'Agreement signed by all three survivors. One signatory currently UNLOCATED.',date:'1987-10-02',pages:6,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — LEGAL COUNSEL',title:'NON-DISCLOSURE AGREEMENT',subtitle:'Sector 03 Incident — 1987',classif:'RESTRICTED',ref:'DN-DOC-007 // LEVEL B',date:'1987-10-02',
-      sections:[
-        {title:'1. PARTIES',body:`The Ministry of Interior Management and signatories identified as <span class="redact">████████████</span>, <span class="redact">████████████</span> and <span class="redact">████████████</span>.`},
-        {title:'2. OBJECT',body:`Signatories agree not to disclose: (a) nature of the Resilience Protocol; (b) confinement conditions in Sector 03; (c) fate of other participants; (d) any anomaly observed during confinement.`},
-        {title:'3. PENALTIES',body:`Breach will result in: (a) immediate legal proceedings; (b) <span class="redact">████████████████████████████████████████████████████████████████████</span>.`},
-        {title:'4. CURRENT STATUS',body:`Active. Last verification contact: <span class="redact">████████</span>. One signatory: <span class="redact">STATUS UNKNOWN SINCE ████████</span>.`},
-      ],sig:{l:'LEGAL COUNSEL — 1987',r:'AGREEMENT ACTIVE // LEVEL B'}}},
-  {ref:'DN-DOC-005',level:'A',cat:'PROTOCOLS',title:'Harlan Protocol — Complete Operative Manual',desc:'Full instruction manual. Nightly questions, catchphrase, Day 4 change management. Top Secret.',date:'[CLASSIFIED]',pages:23,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — INTERNAL PROTOCOL',title:'HARLAN PROTOCOL — COMPLETE OPERATIVE MANUAL',subtitle:'Authorised coordinators only — Destroy after reading',classif:'TOP SECRET',ref:'DN-DOC-005 // LEVEL A',date:'[CLASSIFIED]',
-      sections:[
-        {title:'1. PROTOCOL OBJECTIVE',body:`Harlan is not a survivor. He is the active experiment coordinator. His function: maintain the subject in a state of controlled trust while the Memory Rewriting Protocol executes. The subject must not suspect at any point.`},
-        {title:'2. NIGHTLY QUESTIONS',body:`Each night, Harlan asks a casual question about a bunker detail. Objective: implant an alternative memory. The following day, the bunker environment reflects the subject's response. If asked, Harlan responds: "I don't remember it well either."`},
-        {title:'3. ASSIGNED CATCHPHRASE',body:`Harlan uses "just in case" at the end of sentences — turning it into an emotional security anchor. On Day 4, catchphrase ceases. The subject perceives the change before being able to consciously identify it.`},
-        {title:'4. CHANGE MANAGEMENT — DAY 4',body:`On Day 4, Harlan substitution or deep behavioural modification per sub-protocol <span class="redact">████████████████</span>. Substitute has been trained to maintain apparent continuity. Inconsistency management: Appendix H.`},
-      ],sig:{l:'PROTOCOL DIRECTORATE — CLASSIFIED',r:'LEVEL A — DESTROY AFTER READING'}}},
-  {ref:'DN-DOC-006',level:'A',cat:'TESTIMONIES',title:'Testimony — 1987 Survivor — Subject 9',desc:'Only uncensored transcript. Subject 9 location currently unknown.',date:'1987-09-30',pages:11,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — RESERVED ARCHIVE',title:'TESTIMONY — SUBJECT 9 — 1987',subtitle:'Uncensored transcript — Top Secret',classif:'TOP SECRET',ref:'DN-DOC-006 // LEVEL A',date:'1987-09-30',
-      sections:[
-        {title:'1. IDENTIFICATION',body:`Survivor identified internally as Subject 9. Real name: <span class="redact">████████████████</span>. Age: <span class="redact">██</span>. Condition at declaration: coherent but showing severe cognitive dissonance.`},
-        {title:'2. TESTIMONY EXTRACT',body:`"The bunker is not what it appears to be. The walls change. I know it. I used to see them doing it at night. The coordinator — the one who acted like a friend — had a notebook. He wrote down what we said at dinner. The next day the world was different. Nobody else noticed. Or they pretended not to."<br><br>"The initials on the flashlight belong to <span class="redact">████████</span>. He was the first. Before all of us. And he left the flashlight on purpose."`},
-        {title:'3. PSYCHIATRIC EVALUATION',body:`Evaluation classified testimony as product of severe dissociative state. Recommendation: do not give public credibility. NDA signed. Subject 9 did not speak of Sector 03 again until <span class="redact">████████████████████████████</span>.`},
-      ],sig:{l:'EVALUATOR: <span class="redact">████████████</span>',r:'TOP SECRET // LEVEL A'}}},
-  {ref:'DN-DOC-008',level:'A',cat:'SURVEILLANCE',title:'Surveillance Plan — Post-1987 Survivors',desc:'Active monitoring operative. Subject C location unknown. Risk level classified.',date:'[ACTIVE]',pages:9,
-    content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SPECIAL OPERATIONS UNIT',title:'SURVEILLANCE PLAN — 1987 SURVIVORS',subtitle:'Active operative — Continuous update',classif:'TOP SECRET',ref:'DN-DOC-008 // LEVEL A',date:'[ACTIVE]',
-      sections:[
-        {title:'1. SUBJECT A — STATUS',body:`Located. Current residence: <span class="redact">████████████████████</span>. Complying with NDA. Risk: LOW.`},
-        {title:'2. SUBJECT B — STATUS',body:`Located. Has attempted journalist contact <span class="redact">█</span> times. Contacts intercepted. No disclosure. Risk: MEDIUM. Active measures: <span class="redact">████████████████████████████</span>.`},
-        {title:'3. SUBJECT C (SUBJECT 9) — STATUS',body:`LOCATION: UNKNOWN since <span class="redact">████████</span>. Unknown if still alive. Unknown if information disclosed. Risk: <span class="redact">███████████</span>. Measures: <span class="redact">████████████████████████████████████████████████████</span>.`},
-      ],sig:{l:'SPECIAL OPERATIONS UNIT',r:'ACTIVE OPERATIVE — TOP SECRET // LEVEL A'}}},
+  // ════ LEVEL C — BASIC ACCESS ════════════════════════════════════
+  {ref:'DN-DOC-001',level:'C',cat:'TESTIMONIES',
+   title:'Initial Subject Declaration',
+   desc:'Arrival interview transcript. Subject memory of the collapse and rescue. Three inconsistencies documented.',
+   date:'2026-03-[CLASSIFIED]',pages:4,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03',
+     title:'INITIAL SUBJECT DECLARATION',subtitle:'Arrival interview — Confidential',
+     classif:'RESERVED',ref:'DN-DOC-001 // LEVEL C',date:'[DATE CLASSIFIED]',
+     sections:[
+       {title:'1. SUBJECT IDENTIFICATION',body:'Subject identified as <span class=\"redact\">████████████</span>. Estimated age: <span class=\"redact\">██</span>. No documentation on arrival. Partial amnesia declared for pre-collapse events. Physical condition: stable.'},
+       {title:'2. DECLARATION — THE COLLAPSE',body:'"I don\'t remember how I got here. I remember the noise, then nothing. Harlan found me. He says he has been searching the outside for days looking for survivors."<br><br>Consistency assessment: <span class=\"redact\">████████████████████████</span>. Inconsistencies detected: 3. See Appendix A.'},
+       {title:'3. EVALUATOR NOTES',body:'Subject shows temporal confusion consistent with intake protocol. Has not asked about the outside in the first <span class=\"redact\">██</span> minutes. Trust-stimulus response: POSITIVE. Harlan Protocol activated with expected result.'},
+     ],sig:{l:'EVALUATOR: HARLAN [PROTOCOL ACTIVE]',r:'CLASSIFICATION: RESERVED // LEVEL C'}}},
+
+  {ref:'DN-DOC-002',level:'C',cat:'INFRASTRUCTURE',
+   title:'Operative Manual — Sector 03',
+   desc:'General facility description, usage norms and emergency protocol. Revision 4.2.',
+   date:'1994-11-03',pages:12,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — FACILITIES DIRECTORATE',
+     title:'OPERATIVE MANUAL — SECTOR 03',subtitle:'Internal use — Revision 4.2',
+     classif:'RESERVED',ref:'DN-DOC-002 // LEVEL C',date:'1994-11-03',
+     sections:[
+       {title:'1. FACILITY DESCRIPTION',body:'Sector 03 is a Class B underground facility designed to house up to <span class=\"redact\">██</span> persons for a maximum of <span class=\"redact\">███</span> days. Autonomous generator, filtered ventilation, basic supplies, shortwave communication.'},
+       {title:'2. EMERGENCY PROTOCOL',body:'Generator failure: backup activates in <span class=\"redact\">██</span> seconds. Camera independent battery: <span class=\"redact\">██</span> hours. Evacuation: Appendix <span class=\"redact\">█</span>.'},
+       {title:'3. USE RESTRICTIONS',body:'Storage A: Level B or higher. Machine Room: supervision required. Control Room: duty coordinator only.'},
+     ],sig:{l:'FACILITIES DIRECTORATE — 1994',r:'SECTOR 03 // OPERATIVE MANUAL'}}},
+
+  {ref:'DN-STR-001',level:'C',cat:'TESTIMONIES',
+   title:'Personnel File — Caretaker Assignment 2019',
+   desc:'Internal memo assigning a new caretaker coordinator to Sector 03. First mention of the Harlan designation.',
+   date:'2019-04-07',pages:3,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — HUMAN RESOURCES DIVISION',
+     title:'PERSONNEL ASSIGNMENT — SECTOR 03 CARETAKER',subtitle:'Internal memo — For coordinator eyes only',
+     classif:'RESERVED',ref:'DN-STR-001 // LEVEL C',date:'2019-04-07',
+     sections:[
+       {title:'1. ASSIGNMENT DETAILS',body:'Subject <span class=\"redact\">████████████████</span> has been selected to assume the HARLAN role effective <span class=\"redact\">████████</span>. The designation HARLAN is a function, not an identity. The selected individual has undergone <span class=\"redact\">██</span> weeks of behavioural conditioning and voice modulation training.'},
+       {title:'2. ROLE DESCRIPTION',body:'The HARLAN coordinator is responsible for: (a) maintaining the trust relationship with the active subject; (b) executing the nightly questionnaire per Protocol DN-PRO-001; (c) monitoring the diary entries without the subject\'s knowledge; (d) reporting anomalies to the Control Room in real time.'},
+       {title:'3. NOTE ON CONTINUITY',body:'If the HARLAN coordinator becomes compromised — through illness, identification by the subject, or emotional contamination — the Day 4 substitution protocol activates. The replacement coordinator has been briefed and will maintain the persona. The subject must not be informed.'},
+     ],sig:{l:'HR DIVISION — CLASSIFIED',r:'HARLAN DESIGNATION // LEVEL C'}}},
+
+  {ref:'DN-STR-002',level:'C',cat:'OBJECTS',
+   title:'Recovery Report — Personal Items — Prior Occupant',
+   desc:'Items found in Sector 03 after previous protocol concluded. Owner unidentified. Items retained and repositioned as protocol tools.',
+   date:'2025-11-14',pages:2,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03 RECOVERY TEAM',
+     title:'PERSONAL ITEMS RECOVERY REPORT',subtitle:'Post-protocol sweep — Items of unknown origin',
+     classif:'RESERVED',ref:'DN-STR-002 // LEVEL C',date:'2025-11-14',
+     sections:[
+       {title:'1. ITEMS RECOVERED',body:'Items found after previous protocol concluded, before current subject was introduced:<br><br>— One industrial flashlight, heavily worn (see DN-DOC-004)<br>— One partial handwritten note (see DN-OBJ-002)<br>— 47 vertical marks scratched into dormitory north wall<br>— One photograph, torn in half. Depicted individual: unidentified. Location: consistent with Sector 03. Date on reverse: <span class=\"redact\">████████</span>. Impossible given facility history.'},
+       {title:'2. DISPOSAL DECISION',body:'Items were not removed from the facility. Decision rationale: <span class=\"redact\">████████████████████████████████████████████████████████████████</span>. Items placed in positions where the current subject may encounter them. Encounter timing: to be determined by protocol progression.'},
+       {title:'3. EXPECTED EFFECT',body:'Encountering the items is expected to produce cognitive dissonance in the current subject. This is consistent with protocol objectives. The subject is not to receive any explanation. The HARLAN coordinator has been briefed.'},
+     ],sig:{l:'RECOVERY TEAM — SECTOR 03',r:'ITEMS RETAINED AS PROTOCOL TOOLS // LEVEL C'}}},
+
+  // ════ LEVEL B — EXTENDED ACCESS ═════════════════════════════════
+  {ref:'DN-DOC-003',level:'B',cat:'INCIDENTS',
+   title:'Incident 1987 — Executive Summary',
+   desc:'12 subjects. 3 survivors. Official cause falsified.',
+   date:'1987-09-14',pages:8,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — RESEARCH DEPARTMENT',
+     title:'SECTOR 03 INCIDENT — 1987',subtitle:'Executive Summary — Restricted',
+     classif:'RESTRICTED',ref:'DN-DOC-003 // LEVEL B',date:'1987-09-14',
+     sections:[
+       {title:'1. PROTOCOL DESCRIPTION',body:'Extreme resilience protocol. 12 volunteers. Planned confinement: <span class=\"redact\">██</span> days. Stated objective: adaptation under isolation. Actual objective: <span class=\"redact\">████████████████████████████████████</span>.'},
+       {title:'2. OUTCOME',body:'9 of 12 subjects presented <span class=\"redact\">█████████████████████</span>. Three survivors evacuated. Official cause: severe psychological stress. Actual cause: <span class=\"redact\">████████████████████████████</span>.'},
+       {title:'3. MEASURES ADOPTED',body:'Report classified — Level A only. Three survivors signed NDA DN-DOC-007. None has spoken publicly since <span class=\"redact\">████████</span>.'},
+     ],sig:{l:'LEAD INVESTIGATOR: <span class=\"redact\">████████████</span>',r:'CLASSIFICATION: RESTRICTED // LEVEL B'}}},
+
+  {ref:'DN-DOC-004',level:'B',cat:'OBJECTS',
+   title:'Object File — Flashlight SEC-7',
+   desc:'Initials engraved on base. Not in any intake inventory. Linked to note and mirror inscription.',
+   date:'[DATE UNKNOWN]',pages:2,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03 INVENTORY',
+     title:'OBJECT FILE — FLASHLIGHT SEC-7',subtitle:'Unconfirmed owner',
+     classif:'RESTRICTED',ref:'DN-DOC-004 // LEVEL B',date:'[DATE UNKNOWN]',
+     sections:[
+       {title:'1. DESCRIPTION',body:'Standard flashlight. Functional. Heavy wear consistent with prolonged use. Initials engraved on base: <span class=\"redact\">███</span>. Hand-engraved with unidentified sharp object.'},
+       {title:'2. PROVENANCE',body:'Not in current subject intake inventory. Not in 1987 protocol inventory. Possible provenance: <span class=\"redact\">████████████████████████</span>. Investigation ongoing.'},
+       {title:'3. CONNECTIONS',body:'Initials match DN-OBJ-002 signature. Match mirror condensation Day 5. Working hypothesis: <span class=\"redact\">████████████████████████████████████████</span>.'},
+     ],sig:{l:'INVENTORY: <span class=\"redact\">██████</span>',r:'OWNER UNCONFIRMED'}}},
+
+  {ref:'DN-DOC-007',level:'B',cat:'CONTRACTS',
+   title:'Non-Disclosure Agreement — 1987 Survivors',
+   desc:'Signed by all three survivors. One signatory currently UNLOCATED.',
+   date:'1987-10-02',pages:6,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — LEGAL COUNSEL',
+     title:'NON-DISCLOSURE AGREEMENT',subtitle:'Sector 03 — 1987 Survivors',
+     classif:'RESTRICTED',ref:'DN-DOC-007 // LEVEL B',date:'1987-10-02',
+     sections:[
+       {title:'1. PARTIES',body:'Ministry of Interior Management and <span class=\"redact\">████████████</span>, <span class=\"redact\">████████████</span> and <span class=\"redact\">████████████</span>.'},
+       {title:'2. OBJECT',body:'Signatories agree not to disclose: (a) nature of the Resilience Protocol; (b) confinement conditions; (c) fate of other participants; (d) any anomaly observed.'},
+       {title:'3. PENALTIES',body:'Breach will result in: (a) immediate legal proceedings; (b) <span class=\"redact\">████████████████████████████████████████████████████████████████████</span>.'},
+       {title:'4. CURRENT STATUS',body:'Active. Last verification: <span class=\"redact\">████████</span>. One signatory: <span class=\"redact\">STATUS UNKNOWN SINCE ████████</span>.'},
+     ],sig:{l:'LEGAL COUNSEL — 1987',r:'AGREEMENT ACTIVE // LEVEL B'}}},
+
+  {ref:'DN-STR-003',level:'B',cat:'TESTIMONIES',
+   title:'Field Report — Prior Subject — Final Days',
+   desc:'Coordinator log on the prior subject behaviour during Days 4-6. The photograph was already in the facility when the protocol team went to place it.',
+   date:'[CLASSIFIED]',pages:5,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SECTOR 03 COORDINATOR LOG',
+     title:'FIELD REPORT — PRIOR SUBJECT — DAYS 4 THROUGH 6',subtitle:'Coordinator internal log — Restricted distribution',
+     classif:'RESTRICTED',ref:'DN-STR-003 // LEVEL B',date:'[CLASSIFIED]',
+     sections:[
+       {title:'1. DAY 4 — CHANGE OF COORDINATOR',body:'Substitution executed at 03:14. Prior HARLAN coordinator relieved per emotional contamination protocol. Replacement assumed role without incident. Subject did not explicitly identify the substitution. However: subject ceased using the name "Harlan" to address the coordinator from Day 4 onward. Referred to coordinator only as "you". This deviation has not been observed in previous protocols.'},
+       {title:'2. DAY 5 — THE PHOTOGRAPH',body:'Subject found the photograph as planned. Subject\'s reaction was not as planned. Subject did not show confusion — subject showed recognition. Subject stated: "I know this person." Subject was not supposed to know this person. The HARLAN coordinator did not have an approved response. Coordinator improvised. See Appendix J for full exchange transcript.'},
+       {title:'3. DAY 6 — DEVIATION FROM PROTOCOL',body:'Subject did not exit through the door on Day 6. Door was open. Subject sat in the main room for <span class=\"redact\">██</span> hours. Subject wrote in the diary. Subject then walked to the door, stood in the threshold for <span class=\"redact\">████</span> minutes, then returned to the dormitory. When extraction team entered, subject was <span class=\"redact\">████████████████████████████████████████████████████</span>.'},
+     ],sig:{l:'COORDINATOR — SECTOR 03',r:'PRIOR PROTOCOL // RESTRICTED // LEVEL B'}}},
+
+  {ref:'DN-STR-004',level:'B',cat:'INCIDENTS',
+   title:'Anomaly Report — The Photograph — Provenance Unknown',
+   desc:'The photograph was already in the facility when the protocol team went to place it. No authorised access during the inter-protocol period explains this.',
+   date:'2026-01-09',pages:4,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — INTERNAL INVESTIGATION UNIT',
+     title:'ANOMALY REPORT — PHOTOGRAPH — PROVENANCE UNKNOWN',subtitle:'Internal investigation — No conclusion reached',
+     classif:'RESTRICTED',ref:'DN-STR-004 // LEVEL B',date:'2026-01-09',
+     sections:[
+       {title:'1. DESCRIPTION OF ANOMALY',body:'A photograph was to be placed in the facility per protocol for Day 5 subject disorientation. Standard procedure. The anomaly: when the protocol team went to place it, it was already there.'},
+       {title:'2. INVESTIGATION FINDINGS',body:'Access logs show <span class=\"redact\">████</span> authorised entries and zero detected unauthorised entries between protocols. The photograph does not match any document in the facility archive. The individual depicted has not been identified. The date on the reverse is <span class=\"redact\">██</span> years before the facility was constructed.'},
+       {title:'3. CURRENT STATUS',body:'Investigation suspended pending Level A review. The photograph was used in the current protocol as intended. The question of its origin remains open. Current assessment: <span class=\"redact\">████████████████████████████████████████████████████████████████████████</span>.'},
+     ],sig:{l:'INVESTIGATION UNIT — SECTOR 03',r:'ANOMALY FILE // RESTRICTED // LEVEL B'}}},
+
+  // ════ LEVEL A — FULL ACCESS ══════════════════════════════════════
+  {ref:'DN-DOC-005',level:'A',cat:'PROTOCOLS',
+   title:'Harlan Protocol — Complete Operative Manual',
+   desc:'Full instruction manual. Nightly questions, catchphrase, Day 4 change management.',
+   date:'[CLASSIFIED]',pages:23,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — INTERNAL PROTOCOL',
+     title:'HARLAN PROTOCOL — COMPLETE OPERATIVE MANUAL',subtitle:'Authorised coordinators only — Destroy after reading',
+     classif:'TOP SECRET',ref:'DN-DOC-005 // LEVEL A',date:'[CLASSIFIED]',
+     sections:[
+       {title:'1. PROTOCOL OBJECTIVE',body:'Harlan is not a survivor. He is the active experiment coordinator. Function: maintain the subject in controlled trust while the Memory Rewriting Protocol executes. The subject must not suspect this at any point.'},
+       {title:'2. NIGHTLY QUESTIONS',body:'Each night, Harlan asks a casual question about a bunker detail. Objective: implant an alternative memory. The following day, the bunker environment reflects the subject\'s response. If asked, Harlan responds: "I don\'t remember it well either."'},
+       {title:'3. ASSIGNED CATCHPHRASE',body:'Harlan uses "just in case" at sentence ends — turning it into an emotional security anchor. On Day 4, the catchphrase ceases. The subject perceives the change before consciously identifying it.'},
+       {title:'4. CHANGE MANAGEMENT — DAY 4',body:'On Day 4, Harlan substitution or deep behavioural modification per sub-protocol <span class=\"redact\">████████████████</span>. Substitute trained to maintain apparent continuity. Inconsistency management: Appendix H.'},
+     ],sig:{l:'PROTOCOL DIRECTORATE — CLASSIFIED',r:'LEVEL A — DESTROY AFTER READING'}}},
+
+  {ref:'DN-DOC-006',level:'A',cat:'TESTIMONIES',
+   title:'Testimony — 1987 Survivor — Subject 9',
+   desc:'Only uncensored transcript. Subject 9 location currently unknown. States the marks on the wall are not from the current subject.',
+   date:'1987-09-30',pages:11,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — RESERVED ARCHIVE',
+     title:'TESTIMONY — SUBJECT 9 — 1987',subtitle:'Uncensored transcript — Top Secret',
+     classif:'TOP SECRET',ref:'DN-DOC-006 // LEVEL A',date:'1987-09-30',
+     sections:[
+       {title:'1. IDENTIFICATION',body:'Subject 9. Real name: <span class=\"redact\">████████████████</span>. Age: <span class=\"redact\">██</span>. Condition: coherent but severe cognitive dissonance.'},
+       {title:'2. TESTIMONY EXTRACT',body:'"The bunker is not what it appears to be. The walls change. I know it. I used to see them doing it at night. The coordinator — the one who acted like a friend — had a notebook. He wrote down what we said at dinner. The next day the world was different. Nobody else noticed. Or they pretended not to."<br><br>"The initials on the flashlight belong to <span class=\"redact\">████████</span>. He was the first. Before all of us. And he left the flashlight on purpose."'},
+       {title:'3. PSYCHIATRIC EVALUATION',body:'Classified as product of severe dissociative state. NDA signed. Subject 9 did not speak of Sector 03 again until <span class=\"redact\">████████████████████████████</span>.'},
+     ],sig:{l:'EVALUATOR: <span class=\"redact\">████████████</span>',r:'TOP SECRET // LEVEL A'}}},
+
+  {ref:'DN-DOC-008',level:'A',cat:'SURVEILLANCE',
+   title:'Surveillance Plan — Post-1987 Survivors',
+   desc:'Subject C location unknown. Risk level classified. Active measures ongoing.',
+   date:'[ACTIVE]',pages:9,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SPECIAL OPERATIONS UNIT',
+     title:'SURVEILLANCE PLAN — 1987 SURVIVORS',subtitle:'Active operative — Continuous update',
+     classif:'TOP SECRET',ref:'DN-DOC-008 // LEVEL A',date:'[ACTIVE]',
+     sections:[
+       {title:'1. SUBJECT A — STATUS',body:'Located. Residence: <span class=\"redact\">████████████████████</span>. Complying with NDA. Risk: LOW.'},
+       {title:'2. SUBJECT B — STATUS',body:'Located. Journalist contact attempted <span class=\"redact\">█</span> times. Intercepted. Risk: MEDIUM. Active measures: <span class=\"redact\">████████████████████████████</span>.'},
+       {title:'3. SUBJECT C (SUBJECT 9) — STATUS',body:'LOCATION: UNKNOWN since <span class=\"redact\">████████</span>. Alive: unknown. Information disclosed: unknown. Risk: <span class=\"redact\">███████████</span>. Measures: <span class=\"redact\">████████████████████████████████████████████████████</span>.'},
+     ],sig:{l:'SPECIAL OPERATIONS UNIT',r:'TOP SECRET // LEVEL A'}}},
+
+  {ref:'DN-STR-005',level:'A',cat:'PROTOCOLS',
+   title:'The Loop Hypothesis — Internal Research Document',
+   desc:'Subjects who complete the protocol may have been introduced before. The marks on the wall are not from the current subject. They may not be from the prior subject either.',
+   date:'2023-08-19',pages:18,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — RESEARCH DIVISION — CLASSIFIED',
+     title:'THE LOOP HYPOTHESIS',subtitle:'Proposal for cyclical protocol application — Top Secret',
+     classif:'TOP SECRET',ref:'DN-STR-005 // LEVEL A',date:'2023-08-19',
+     sections:[
+       {title:'1. HYPOTHESIS STATEMENT',body:'If the Memory Rewriting Protocol is successful, the subject exits with a partially falsified memory. The hypothesis proposes that a subject whose memory has been sufficiently rewritten could, after <span class=\"redact\">██████</span> months, be re-introduced to the facility without recognising it. They would experience the protocol as new. The process would repeat. Indefinitely.'},
+       {title:'2. EVIDENCE FROM PREVIOUS PROTOCOLS',body:'Analysis of <span class=\"redact\">██</span> protocols reveals that <span class=\"redact\">█</span> subjects have been re-introduced at least once without detection. In one case — <span class=\"redact\">████████████████████████████████</span> — the subject was introduced <span class=\"redact\">█</span> times. The marks on the dormitory wall are not from the current subject. They are not from the prior subject either.'},
+       {title:'3. CURRENT PROTOCOL STATUS',body:'The current subject entered the facility on <span class=\"redact\">████████</span>. This is documented as their first visit. This documentation may not be accurate. The flashlight was not left by a stranger. The photograph was not placed by the protocol team. The initials in the mirror are the same as the initials on the flashlight because they belong to the same person. That person may be currently present in the facility.'},
+     ],sig:{l:'RESEARCH DIVISION — TOP SECRET',r:'THE LOOP HYPOTHESIS // LEVEL A'}}},
+
+  {ref:'DN-STR-006',level:'A',cat:'TESTIMONIES',
+   title:'Intercepted Communication — Subject 9 — 2026',
+   desc:'Fragment intercepted 38 years after Subject 9 disappeared. Content: a warning addressed to someone inside Sector 03.',
+   date:'2026-02-03',pages:2,
+   content:{ministry:'MINISTRY OF INTERIOR MANAGEMENT — SPECIAL OPERATIONS — INTERCEPT DIVISION',
+     title:'INTERCEPTED COMMUNICATION — SUBJECT 9 — 2026',subtitle:'Fragment only — Partial decryption — Top Secret',
+     classif:'TOP SECRET',ref:'DN-STR-006 // LEVEL A',date:'2026-02-03',
+     sections:[
+       {title:'1. INTERCEPTION DETAILS',body:'Communication intercepted via <span class=\"redact\">████████████████████████</span> on <span class=\"redact\">████████</span>. Origin: unknown. Recipient: unknown. Partial decryption achieved after <span class=\"redact\">██</span> hours. Full decryption: not possible.'},
+       {title:'2. DECRYPTED FRAGMENT',body:'"...they will put you in a room and tell you it is safe. It is not safe. The person who brings you coffee knows more than you will ever be allowed to know. The marks on the wall are yours. You made them. You don\'t remember making them because you are not supposed to remember.<br><br>Do not open the door on the sixth day. If you open the door, you will go outside, and outside will look normal, and you will believe it is over, and it will not be over.<br><br>The flashlight was mine. Leave it. Leave everything. If you are reading this then they have already..."'},
+       {title:'3. STATUS',body:'Communication cut off before full transmission. Whether the intended recipient received any portion: unknown. Current subject email address checked against intercept metadata: <span class=\"redact\">████████████████████████████████████████████████</span>.'},
+     ],sig:{l:'INTERCEPT DIVISION — SPECIAL OPERATIONS',r:'TOP SECRET // LEVEL A — EYES ONLY'}}},
 ];
 
 let _currentCat='ALL';
@@ -555,6 +683,41 @@ function openVideoDoc(){
 })();
 
 // ================================================================
+// ADDITIONAL CODE BAR (inside archive content, always visible)
+// ================================================================
+function initAddCodeBar(){
+  const inp=document.getElementById('addCodeInput');
+  const btn=document.getElementById('addCodeBtn');
+  const st=document.getElementById('addCodeStatus');
+
+  function tryAdd(){
+    const val=(inp?.value||'').trim().toUpperCase();
+    if(inp)inp.value='';
+    if(!val)return;
+    const already=_unlocked.has(val);
+    const ok=applyCode(val);
+    if(ok && already){
+      if(st){st.textContent='CODE ALREADY ACTIVE IN THIS SESSION';st.className='add-code-status';}
+      return;
+    }
+    if(ok){
+      const a=getAccess();
+      if(st){st.textContent='CODE ACCEPTED — '+(a?a.label:'ACCESS GRANTED');st.className='add-code-status ok';}
+      // Refresh archive display
+      showArchiveContent();
+      if(val==='BUNKER-DEEP'&&st){st.textContent='INFRASTRUCTURE CODE — USE IN INFRASTRUCTURE TAB';st.className='add-code-status ok';}
+      setTimeout(()=>{if(st){st.textContent='CODES ACCUMULATE — EACH NEW CODE UPGRADES YOUR ACCESS LEVEL';st.className='add-code-status';}},3500);
+    } else {
+      if(st){st.textContent='INVALID CODE — ACCESS DENIED';st.className='add-code-status err';}
+      setTimeout(()=>{if(st){st.textContent='CODES ACCUMULATE — EACH NEW CODE UPGRADES YOUR ACCESS LEVEL';st.className='add-code-status';}},2500);
+    }
+  }
+
+  btn?.addEventListener('click',tryAdd);
+  inp?.addEventListener('keydown',e=>{if(e.key==='Enter')tryAdd();});
+}
+
+// ================================================================
 // INIT
 // ================================================================
 document.addEventListener('DOMContentLoaded',()=>{
@@ -564,4 +727,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   initMap();
   initGate();
   initDocCats();
+  initAddCodeBar();
 });
